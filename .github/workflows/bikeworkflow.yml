@@ -31,3 +31,16 @@ jobs:
     - name: Format code with Black
       run: |
         make format
+    - name: Train pipeline
+      run: |
+        ./bikeshare_model/train_pipeline.py
+    - name: Predit pipeline
+      run: |
+        ./bikeshare_model/predict.py 
+    - name: Build whl file
+      run: |
+        python -m build 
+    - name: Build docker container 
+      run: |
+        cp ./bikeshare_model/*.whl ./bikeshare_model_api && \
+        cd ./bikeshare_model_api && docker build -t bikeshare_model_api .
