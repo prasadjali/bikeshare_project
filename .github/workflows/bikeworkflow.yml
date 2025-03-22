@@ -25,9 +25,6 @@ jobs:
     - name: Lint with pylint
       run: |
         make lint
-    - name: test with pytest
-      run: |
-        make test
     - name: Format code with Black
       run: |
         make format
@@ -40,6 +37,9 @@ jobs:
     - name: Build whl file
       run: |
         python -m build 
+    - name: test with pytest
+      run: |
+        make test 
     - name: Build docker container 
       run: |
         cp ./bikeshare_model/*.whl ./bikeshare_model_api && \
