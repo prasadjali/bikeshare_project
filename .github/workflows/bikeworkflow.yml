@@ -30,13 +30,13 @@ jobs:
         make format
     - name: Train pipeline
       run: |
-        ./bikeshare_model/train_pipeline.py
+        python@v3 ./bikeshare_model/train_pipeline.py
     - name: Predit pipeline
       run: |
-        ./bikeshare_model/predict.py 
+        python@v3 ./bikeshare_model/predict.py 
     - name: Build whl file
       run: |
-        python -m build 
+        python@v3 -m build 
     - name: test with pytest
       run: |
         make test 
