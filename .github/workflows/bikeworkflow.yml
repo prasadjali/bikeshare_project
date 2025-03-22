@@ -42,5 +42,5 @@ jobs:
         make test 
     - name: Build docker container 
       run: |
-        cp ./bikeshare_model/*.whl ./bikeshare_model_api && \
+        cp dist/*.whl ./bikeshare_model_api && \
         cd ./bikeshare_model_api && docker build -t bikeshare_model_api .
