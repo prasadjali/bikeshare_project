@@ -4,7 +4,7 @@ install:
 format:
 	black *.py
 lint:
-	pylint --disable=R,C script.py
+	pylint --disable=R,C bikeshare_model/train_pipeline.py
 test:
 	python -m pytest tests/test_*.py
 all: 
